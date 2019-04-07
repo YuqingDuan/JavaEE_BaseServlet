@@ -1,0 +1,16 @@
+第2章: 通用Servlet的编写
+1. 问题：对MySql数据库进行CRUD操作，需要用到5个Servlet。当一个项目的功能模块变的很多的时候，意味着需要编写Servlet数量会成倍增加，
+2. 需求：我们要想一种办法减少Servlet编写的任务量。
+3. 从客户端向服务端发起请求,调用功能方式:
+    3.1_通过表单向服务端发起请求
+    3.2_通过链接向服务端发起请求
+    3.3_Ajax向服务端发起请求
+4. 利用到反射技术
+5. 将反射部分代码抽取到BaseServlet中（重写父类的service方法），
+   子类ServletDemo03继承BaseServlet而非直接继承爷爷HttpServlet，
+   此时ServletDemo03的爸爸是BaseServlet，而爷爷是HttpServlet。
+   ServletDemo03要初始化，必须先初始化爸爸BaseServlet，而BaseServlet要初始化，必须先初始化HttpServlet。
+   HttpServlet中没有init()方法，init()方法在HttpServlet的爸爸GenericServlet中。
+   完成这一套初始化链之后...
+   根据servlet的生命周期，接着ServletDemo03执行service()方法，依次向上找，最终执行爸爸BaseServlet的service()方法，
+   即不再执行爷爷HttpServlet的service()方法！

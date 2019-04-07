@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <welcome-file-list>
+        <welcome-file>index3.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>BaseServlet</servlet-name>
+        <servlet-class>cn.itcast.store.web.base.BaseServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDemo01</servlet-name>
+        <servlet-class>cn.itcast.store.web.base.ServletDemo01</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDemo02</servlet-name>
+        <servlet-class>cn.itcast.store.web.base.ServletDemo02</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDemo03</servlet-name>
+        <servlet-class>cn.itcast.store.web.base.ServletDemo03</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>BaseServlet</servlet-name>
+        <url-pattern>/BaseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDemo01</servlet-name>
+        <url-pattern>/ServletDemo01</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDemo02</servlet-name>
+        <url-pattern>/ServletDemo02</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDemo03</servlet-name>
+        <url-pattern>/ServletDemo03</url-pattern>
+    </servlet-mapping>
+</web-app>
